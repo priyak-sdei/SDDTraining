@@ -12,9 +12,9 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.tittle1}>
-      <Text style={styles.title}>Loginn</Text>
+      <Text style={styles.title}>Login</Text>
        
-      <Text style= {{color:'#6B5E5E'}}>By Signing in you are agreeing the </Text>
+      <Text style= {{color:'#6B5E5E'}}>By Signing in you are agreeing </Text>
       <Text style={{color: '#036BB9',marginTop:10}}><Text style={{color:'#6B5E5E'}}>our</Text> Terms and Privacy Policy </Text>
       </View>
 
