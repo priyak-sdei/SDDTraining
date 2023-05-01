@@ -50,7 +50,7 @@ const LoginScreen = ({navigation}) => {
           </View>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <View style={{ flexDirection: 'row', paddingLeft: 33 }}>
-              <Image source={require('./assets/Rectangle 7.png')} style={styles.rightIcon} />
+              <Image source={require('./assets/rectangle7.png')} style={styles.rightIcon} />
               <Text style={{ color: '#6B5E5E' }} > Remember Password</Text>
             </View>
 
@@ -68,26 +68,26 @@ const LoginScreen = ({navigation}) => {
         </View>
         <View style={styles.iconRow}>
           <Image source={require('./assets/Group.png')} style={styles.icon} />
-          <Image source={require('./assets/instagram 1.png')} style={styles.icon} />
-          <Image source={require('./assets/pinterest 1.png')} style={styles.icon} />
-          <Image source={require('./assets/linkedin 1.png')} style={styles.icon} />
+          <Image source={require('./assets/instagram_1.png')} style={styles.icon} />
+          <Image source={require('./assets/pinterest.png')} style={styles.icon} />
+          <Image source={require('./assets/linkedin.png')} style={styles.icon} />
 
 
         </View>
         <View style={styles.bottomIconContainer}>
-          <Image source={require('./assets/image 11.png')} style={styles.bottomIcon} />
+          <Image source={require('./assets/image11.png')} style={styles.bottomIcon} />
         </View>
         <View style={styles.overlapIconContainer}>
-          <Image source={require('./assets/Group 16.png')} style={styles.overlapIcon} />
+          <Image source={require('./assets/group16.png')} style={styles.overlapIcon} />
         </View>
         <View style={styles.overlapIconContainer}>
-          <Image source={require('./assets/Subtract.png')} style={styles.overlapIcon} />
+          <Image source={require('./assets/subtract.png')} style={styles.overlapIcon} />
         </View>
 
 
         <View style={styles.overlapIconContainer2}>
 
-          <Image source={require('./assets/Frame 450.png')} style={styles.overlapIcon} />
+          <Image source={require('./assets/frame450.png')} style={styles.overlapIcon} />
           <Text style={{ color: '#FFFFFF' }}>Login with touch</Text>
         </View>
       </View>
