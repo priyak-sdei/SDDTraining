@@ -17,7 +17,7 @@ const LoginScreen = ({navigation}) => {
         <View style={styles.tittle1}>
           <Text style={styles.title}>Login</Text>
 
-          <Text style={{ color: '#6B5E5E' }}>By Signing in you are agreeing </Text>
+          <Text style={{ color: '#6B5E5E',marginTop:15 }}>By Signing in you are agreeing </Text>
           <Text style={{ color: '#036BB9', marginTop: 10 }}><Text style={{ color: '#6B5E5E' }}>our</Text> Term and privacy policy </Text>
         </View>
 
@@ -26,7 +26,7 @@ const LoginScreen = ({navigation}) => {
           <Text style={{ color: '#E5E5E5', marginLeft: 20 }} > Register</Text>
         </View>
 
-        <View style={{ width: '100%', padding: 1 }}>
+        <View style={{ width: '90%', padding: 1 }}>
           <View style={styles.inputContainer}>
             <Image source={require('./assets/mail.png')} style={styles.icon} />
             <TextInput
@@ -46,10 +46,10 @@ const LoginScreen = ({navigation}) => {
               value={password}
               onChangeText={(text) => setPassword(text)}
             />
-            <Image source={require('./assets/Group 2.png')} style={styles.rightIcon} />
+            <Image source={require('./assets/group2.png')} style={styles.rightIcon} />
           </View>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <View style={{ flexDirection: 'row', paddingLeft: 33 }}>
+            <View style={{ flexDirection: 'row',  }}>
               <Image source={require('./assets/rectangle7.png')} style={styles.rightIcon} />
               <Text style={{ color: '#6B5E5E' }} > Remember Password</Text>
             </View>
@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 30
+    marginTop: 30,
+    color:'black'
     //marginBottom: 20,
 
   },
