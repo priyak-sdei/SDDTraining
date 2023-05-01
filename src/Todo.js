@@ -89,8 +89,11 @@ const TodoList = () => {
         extraData={editingId}
       />
       {/* git status */}
+      
     </View>
   );
 };
 
 export default TodoList;
+
+// todo list
