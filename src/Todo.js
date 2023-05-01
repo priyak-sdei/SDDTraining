@@ -11,7 +11,7 @@ const TodoList = () => {
       setTasks([...tasks, { name: taskName, description: taskDescription }]);
       setTaskName('');
       setTaskDescription('');
-    }
+    }  
   };
    const handleToggleTask = (index) => {
     const newTasks = [...tasks];
