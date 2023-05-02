@@ -22,3 +22,5 @@ const Root = () => {
 }
 
 export default Root;
+
+//root page 
