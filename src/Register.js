@@ -14,7 +14,7 @@ const RegisterPage = () => {
   const [Frequency, setFrequency] = useState('');
   const [Duration, setDuration] = useState('');
   const [RemoveMedicine, setRemoveMedicine] = useState('');
-  const [address, setAddress] = useState('');
+//   const [address, setAddress] = useState('');
   const [QualityPrescribed, setQualityPrescribed] = useState('');
   const [Frequencyy, setFrequencyy] = useState('');
   const [QuantityPrescribed, setQuantityPrescribed] = useState('');
@@ -100,14 +100,14 @@ const RegisterPage = () => {
           </View>
           <View  style={{width:'45%',height:40,backgroundColor:'blue',alignSelf:'flex-end',marginBottom:10}}>
             <TouchableOpacity style={{backgroundColor: 'red', flex: 1,width:'100%', alignItems:'center',justifyContent:'center'}}>
-              <Text style={{color:'white'}}>- Remove Medicine</Text>
+              <Text style={{color:'white'}}> + Add Medicine</Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
 
      
-      <Button title="Register" onPress={handleRegister} />
+      <Button title="Submit" onPress={handleRegister} />
     </ScrollView>
   );
 };
