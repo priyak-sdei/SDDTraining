@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, TextInput, Text, TouchableOpacity, StyleSheet, Modal, TouchableHighlight } from 'react-native';
+import { ScrollView,View, TextInput, Text, TouchableOpacity, StyleSheet, Modal, TouchableHighlight } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const RegistrationPage = ({navigation}) => {
   const [name, setName] = useState('');
@@ -50,9 +51,8 @@ const RegistrationPage = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView >
       <Text style={styles.title}>Registration Page</Text>
-
       <TextInput
         style={styles.input}
         placeholder="Name"
@@ -197,7 +197,7 @@ const RegistrationPage = ({navigation}) => {
        <TouchableOpacity style={styles.button} onPress={handleRegistration}>
         <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
-    </View>
+    </KeyboardAwareScrollView>
   );
 };
 
