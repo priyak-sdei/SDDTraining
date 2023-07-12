@@ -1,8 +1,6 @@
-Some ScreenShots of projects
+Some ScreenShots of project
 
-![Screenshot 2023-07-12 at 10 18 26 AM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/3536e317-8abe-4308-b529-4b3463179a54)
-
-
+![Screenshot 2023-07-03 at 3 23 25 PM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/f7445e7b-5ed4-46d6-a126-67f0fe16273d)
 
 
 https://github.com/priyak-sdei/SDDTraining/assets/130955657/68ba9f29-a6e6-4843-ae21-10733f37dc81
