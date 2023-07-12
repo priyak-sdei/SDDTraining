@@ -33,6 +33,6 @@ import { Provider } from 'react-redux';
 // AppRegistry.registerComponent(appName, () => App);
 // AppRegistry.registerComponent(appName, () => Login);
 // AppRegistry.registerComponent(appName, () => Todo);
-// AppRegistry.registerComponent(appName, () => Register);
-AppRegistry.registerComponent(appName, () => RegisterPage);
+AppRegistry.registerComponent(appName, () => Register);
+// AppRegistry.registerComponent(appName, () => RegisterPage);
 
