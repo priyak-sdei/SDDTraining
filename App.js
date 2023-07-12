@@ -56,7 +56,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Login from './src/Login'
 import Todo from './src/Todo'
-import Register from './src/Register'
+import RegistrationPage from './src/RegisterPage'
 import RegisterPage from './src/Register'
 
 
@@ -66,10 +66,10 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name='RegisterPage' component={RegistrationPage}/>
         <Stack.Screen name='Login' component={Login}/>
         {/* <Stack.Screen name='Todo' component={Todo}/> */}
-        <Stack.Screen name='Register' component={Register}/>
-        {/* <Stack.Screen name='RegisterPage' component={RegisterPage}/> */}
+        <Stack.Screen name='Register' component={RegisterPage}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

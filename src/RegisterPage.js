@@ -1,86 +1,267 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
-import { connect } from 'react-redux';
-import { registerUser } from '../redux/actions/userActions';
-import {Picker} from '@react-native-picker/picker'
+import { View, TextInput, Text, TouchableOpacity, StyleSheet, Modal, TouchableHighlight } from 'react-native';
 
-const RegisterPage = ({ registerUser }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const RegistrationPage = ({navigation}) => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [gender, setGender] = useState('');
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [password, setPassword] = useState('');
+  const [contact, setcontact] = useState('');
+  const [pincode, setpincode] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zipcode, setZipcode] = useState('');
+  const [country, setCountry] = useState('');
+  const [dob, setDob] = useState('');
+  // const [genderModalVisible, setGenderModalVisible] = useState(false);
+  // const [selectedGender, setSelectedGender] = useState('');
+  // const [countryModalVisible, setCountryModalVisible] = useState(false);
+  // const [selectedCountry, setSelectedCountry] = useState('');
 
-  const handleRegister = () => {
-    // Perform validation here
-    if (!username || !password || !email || !gender) {
-      alert('Please fill in all fields');
-      return;
-    }
-
-    // Save the registration data in Redux
-    const userData = {
-      username,
-      password,
-      email,
-      gender,
-      
-    };
-    registerUser(userData);
-
-    // Reset the form
-    setUsername('');
-    setPassword('');
-    setEmail('');
-    setGender('');
-    setSelectedImage(null);
+  const handleRegistration = () => {
+    console.log('Registration:', name, email, password, contact, pincode, address,city, state, zipcode, country, dob);
+    navigation.navigate('Login');
   };
 
-  const handleImageUpload = () => {
-    // Implement image upload functionality here
-    // You can use a package like react-native-image-picker to handle image selection and upload
+  const openGenderModal = () => {
+    setGenderModalVisible(true);
+  };
+
+  const closeGenderModal = () => {
+    setGenderModalVisible(false);
+  };
+
+  const openCountryModal = () => {
+    setCountryModalVisible(true);
+  };
+
+  const closeCountryModal = () => {
+    setCountryModalVisible(false);
+  };
+
+  const handleGenderSelect = (gender) => {
+    setSelectedGender(gender);
+    closeGenderModal();
+  };
+
+  const handleCountrySelect = (country) => {
+    setSelectedCountry(country);
+    closeCountryModal();
   };
 
   return (
-    <View>
-      <Text>Register Page</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Registration Page</Text>
+
       <TextInput
-        placeholder="Username"
-        value={username}
-        onChangeText={text => setUsername(text)}
+        style={styles.input}
+        placeholder="Name"
+        onChangeText={text => setName(text)}
+        value={name}
       />
+
       <TextInput
-        placeholder="Password"
-        secureTextEntry
-        value={password}
-        onChangeText={text => setPassword(text)}
-      />
-      <TextInput
+        style={styles.input}
         placeholder="Email"
-        value={email}
         onChangeText={text => setEmail(text)}
+        value={email}
+        keyboardType="email-address"
       />
-      <Picker
-        selectedValue={gender}
-        onValueChange={value => setGender(value)}
-      >
-        <Picker.Item label="Select Gender" value="" />
-        <Picker.Item label="Male" value="male" />
-        <Picker.Item label="Female" value="female" />
-      </Picker>
-      <TouchableOpacity onPress={handleImageUpload}>
-        <Text>Upload Image</Text>
+
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        onChangeText={text => setPassword(text)}
+        value={password}
+        secureTextEntry
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Contact No."
+        onChangeText={text => setcontact(Number)}
+        value={name}
+      />
+
+        <TextInput
+        style={styles.input}
+        placeholder="Date Of Birth"
+        onChangeText={text => setDob(Number)}
+        value={dob}
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Pincode"
+        onChangeText={text => setpincode(Number)}
+        value={pincode}
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Address"
+        onChangeText={text => setAddress(Number)}
+        value={address}
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="City"
+        onChangeText={text => setCity(Number)}
+        value={city}
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="State"
+        onChangeText={text => setState(Number)}
+        value={state}
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Country"
+        onChangeText={text => setCountry(Number)}
+        value={country}
+      />
+
+
+
+      {/* <TouchableOpacity style={styles.dropdownButton} onPress={openGenderModal}>
+        <Text style={styles.dropdownButtonText}>Gender</Text>
+        <Modal
+          animationType="fade"
+          transparent
+          visible={genderModalVisible}
+          onRequestClose={closeGenderModal}
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+              <TouchableHighlight
+                onPress={() => handleGenderSelect('Male')}
+                underlayColor="#f2f2f2"
+              >
+                <Text style={styles.modalItem}>Male</Text>
+              </TouchableHighlight>
+              <TouchableHighlight
+                onPress={() => handleGenderSelect('Female')}
+                underlayColor="#f2f2f2"
+              >
+                <Text style={styles.modalItem}>Female</Text>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={closeGenderModal} underlayColor="#f2f2f2">
+                <Text style={styles.modalItem}>Cancel</Text>
+              </TouchableHighlight>
+            </View>
+          </View>
+        </Modal>
       </TouchableOpacity>
-      {selectedImage && <Image source={{ uri: selectedImage }} style={{ width: 200, height: 200 }} />}
-      <TouchableOpacity onPress={handleRegister}>
-        <Text>Register</Text>
+
+      <TouchableOpacity style={styles.dropdownButton} onPress={openCountryModal}>
+        <Text style={styles.dropdownButtonText}>Country</Text>
+        <Modal
+          animationType="fade"
+          transparent
+          visible={countryModalVisible}
+          onRequestClose={closeCountryModal}
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+              <TouchableHighlight
+                onPress={() => handleCountrySelect('USA')}
+                underlayColor="#f2f2f2"
+              >
+                <Text style={styles.modalItem}>USA</Text>
+              </TouchableHighlight>
+              <TouchableHighlight
+                onPress={() => handleCountrySelect('Canada')}
+                underlayColor="#f2f2f2"
+              >
+                <Text style={styles.modalItem}>Canada</Text>
+              </TouchableHighlight>
+              <TouchableHighlight
+                onPress={() => handleCountrySelect('UK')}
+                underlayColor="#f2f2f2"
+              >
+                <Text style={styles.modalItem}>UK</Text>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={closeCountryModal} underlayColor="#f2f2f2">
+                <Text style={styles.modalItem}>Cancel</Text>
+              </TouchableHighlight>
+            </View>
+          </View>
+        </Modal>
+      </TouchableOpacity>
+
+      */}
+       <TouchableOpacity style={styles.button} onPress={handleRegistration}>
+        <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  registerUser: userData => dispatch(registerUser(userData)),
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+  input: {
+    width: '100%',
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    marginBottom: 16,
+  },
+  dropdownButton: {
+    width: '100%',
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    marginBottom: 16,
+    justifyContent: 'center',
+  },
+  dropdownButtonText: {
+    color: '#555',
+  },
+  button: {
+    width: '100%',
+    height: 40,
+    backgroundColor: '#007bff',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: '#fff',
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+  },
+  modalItem: {
+    paddingVertical: 10,
+    fontSize: 16,
+  },
 });
 
-export default RegisterPage;
+export default RegistrationPage;
