@@ -1,6 +1,11 @@
 Some ScreenShots of project
+![Screenshot 2023-07-12 at 3 37 42 PM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/c643369f-7e9b-4508-b684-3f20114400b3)
+After Registering Go To Login Page
 
-![Screenshot 2023-07-03 at 3 23 25 PM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/f7445e7b-5ed4-46d6-a126-67f0fe16273d)
+![Screenshot 2023-07-12 at 3 38 32 PM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/4d7d816d-f8a7-457b-9f10-a7efd720d54b)
+
+After Login Page go to add medicine
+![Screenshot 2023-07-12 at 3 40 22 PM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/9bb2a0d7-1a1f-4952-bfe6-1e2f52ee6ef8)
 
 
 https://github.com/priyak-sdei/SDDTraining/assets/130955657/68ba9f29-a6e6-4843-ae21-10733f37dc81
@@ -8,7 +13,8 @@ https://github.com/priyak-sdei/SDDTraining/assets/130955657/68ba9f29-a6e6-4843-a
 
 
 
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-co![Uploading Screenshot 2023-07-12 at 3.37.42 PM.png…]()
+mmunity/cli).
 
 # Getting Started
 
