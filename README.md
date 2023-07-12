@@ -1,3 +1,15 @@
+Some ScreenShots of projects
+
+![Screenshot 2023-07-12 at 10 18 26 AM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/3536e317-8abe-4308-b529-4b3463179a54)
+
+
+
+
+https://github.com/priyak-sdei/SDDTraining/assets/130955657/68ba9f29-a6e6-4843-ae21-10733f37dc81
+
+
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
