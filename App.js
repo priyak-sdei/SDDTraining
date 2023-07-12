@@ -67,9 +67,9 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='Login' component={Login}/>
-        <Stack.Screen name='Todo' component={Todo}/>
+        {/* <Stack.Screen name='Todo' component={Todo}/> */}
         <Stack.Screen name='Register' component={Register}/>
-        <Stack.Screen name='RegisterPage' component={RegisterPage}/>
+        {/* <Stack.Screen name='RegisterPage' component={RegisterPage}/> */}
       </Stack.Navigator>
     </NavigationContainer>
   )

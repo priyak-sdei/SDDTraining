@@ -7,7 +7,7 @@ const LoginScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    navigation.navigate('Todo');
+    navigation.navigate('Register');
     // Handle submitting the form data to a server
   };
 
