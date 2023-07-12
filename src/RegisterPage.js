@@ -80,7 +80,7 @@ const RegistrationPage = ({navigation}) => {
         style={styles.input}
         placeholder="Contact No."
         onChangeText={text => setcontact(Number)}
-        value={name}
+        value={contact}
       />
 
         <TextInput
@@ -243,25 +243,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContent: {
-    backgroundColor: '#fff',
-    paddingVertical: 16,
-    paddingHorizontal: 24,
-  },
-  modalItem: {
-    paddingVertical: 10,
-    fontSize: 16,
-  },
+
+  
+  
 });
 
 export default RegistrationPage;

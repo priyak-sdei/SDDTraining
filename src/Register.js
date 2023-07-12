@@ -8,9 +8,10 @@ import {
   TouchableOpacity,
   ScrollView,
   FlatList,
+  Image,
 } from 'react-native';
 
-const RegisterPage = () => {
+const RegisterPage = ({navigation}) => {
   const [medicines, setMedicines] = useState([
     { medicineName: '', quantityPrescribed: '', frequency: '', duration: '', isadded: false },
   ]);
@@ -34,10 +35,14 @@ const RegisterPage = () => {
   const handleRegister = () => {
     console.log('Registration data:', medicines);
   };
+  const handleLogin = () => {
+    navigation.navigate('Login');
+    // Handle submitting the form data to a server
+  };
 
   return (
     <View style={styles.container}>
-      <View>
+      <View style={{backgroundColor:'lightblue'}}>
         <Text style={styles.header}>Order Medicine</Text>
       </View>
       <FlatList
@@ -46,15 +51,18 @@ const RegisterPage = () => {
           return (
             <View style={{ flex: 1 }}>
               <View style={{ flex: 1 }}>
-                <Text>Medicine Name</Text>
+                <Text >Medicine Name</Text>
+                <View style={{flex:1,flexDirection:'row',borderWidth: 1,borderColor:'black',marginBottom: 10,height: 40,borderCurve:'circular',borderRadius: 8}}>
+                <Image source={require('./assets/download.png')} style={styles.icon} />
                 <TextInput
                   style={styles.input}
-                  placeholder=""
+                  placeholder="Search Medicine"
                   value={item.medicineName}
                   onChangeText={(text) => {
                     setMedicines(Object.assign([], medicines, { [index]: { ...item, medicineName: text } }));
                   }}
                 />
+                 </View>
               </View>
               <View
                 style={{
@@ -67,7 +75,7 @@ const RegisterPage = () => {
                   <Text>Quantity Prescribed</Text>
                   <TextInput
                     style={styles.input1}
-                    placeholder=""
+                    placeholder="Quantity Prescribed"
                     value={item.quantityPrescribed}
                     onChangeText={(text) => {
                       setMedicines(Object.assign([], medicines, { [index]: { ...item, quantityPrescribed: text } }));
@@ -78,7 +86,7 @@ const RegisterPage = () => {
                   <Text>Frequency</Text>
                   <TextInput
                     style={styles.input1}
-                    placeholder=""
+                    placeholder="Frequency"
                     value={item.frequency}
                     onChangeText={(text) => {
                       setMedicines(Object.assign([], medicines, { [index]: { ...item, frequency: text } }));
@@ -97,7 +105,7 @@ const RegisterPage = () => {
                   <Text>Duration(Days)</Text>
                   <TextInput
                     style={styles.input1}
-                    placeholder=""
+                    placeholder="Duration"
                     value={item.duration}
                     onChangeText={(text) => {
                       setMedicines(Object.assign([], medicines, { [index]: { ...item, duration: text } }));
@@ -107,11 +115,12 @@ const RegisterPage = () => {
                 {item.isadded ? (
                   <View
                     style={{
-                      width: '45%',
-                      height: 40,
-                      backgroundColor: 'blue',
-                      alignSelf: 'flex-end',
+                      width: '45%',                  
+                      backgroundColor: 'red',                    
                       marginBottom: 10,
+                      borderRadius: 5,
+                      padding: 10,
+                      marginTop: 20,
                     }}
                   >
                     <TouchableOpacity
@@ -121,6 +130,7 @@ const RegisterPage = () => {
                         width: '100%',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        borderRadius: 20
                       }}
                       onPress={() => handleRemoveMedicine(item, index)}
                     >
@@ -130,11 +140,12 @@ const RegisterPage = () => {
                 ) : (
                   <View
                     style={{
-                      width: '45%',
-                      height: 40,
-                      backgroundColor: 'blue',
-                      alignSelf: 'flex-end',
+                      width: '45%',                  
+                      backgroundColor: 'blue',                    
                       marginBottom: 10,
+                      borderRadius: 5,
+                      padding: 10,
+                      marginTop: 20,
                     }}
                   >
                     <TouchableOpacity
@@ -144,6 +155,7 @@ const RegisterPage = () => {
                         width: '100%',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        borderRadius: 20
                       }}
                       onPress={() => handleAddMedicine(item, index)}
                     >
@@ -157,7 +169,18 @@ const RegisterPage = () => {
         }}
       />
 
-      <Button title="Submit" onPress={handleRegister} />
+      {/* <Button title="Submit" onPress={handleRegister} /> */}
+      <TouchableOpacity style={styles.button} onPress={handleRegister}>
+            <Text style={styles.buttonText}>Submit</Text>
+          </TouchableOpacity>
+      <Text style={{justifyContent:'center', alignItems:'center'}}>Or</Text>
+      <View style={{marginTop:'50'}}>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+            <Text style={styles.buttonText}>Logout</Text>
+          </TouchableOpacity>
+      {/* <Button style={{borderRaadius:8}} title="Logout" onPress={handleLogin}/> */}
+      
+      </View>
     </View>
   );
 };
@@ -179,16 +202,41 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   input: {
-    marginBottom: 10,
-    borderWidth: 1,
-    height: 40,
-    borderColor: 'black',
+    // marginBottom: 10,
+    // borderWidth: 1,
+    // height: 40,
+    // borderColor: 'black',
+    // // borderCurve:'circular', 
+    // borderRadius: 8
   },
   input1: {
     borderWidth: 1,
     height: 40,
     borderColor: 'black',
+    borderRadius:8,
+    marginTop:2
   },
+  button: {
+    backgroundColor: '#0386D0',
+    borderRadius: 5,
+    padding: 10,
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontColor: '#FFFFFF',
+    fontWeight: 'bold',
+    background: '#0386D0',
+  },
+  icon: {
+    width: 40,
+    height: 35,
+    marginLeft: 10,
+    resizeMode: 'contain',
+    border:10,
+  }
 });
 
 export default RegisterPage;
