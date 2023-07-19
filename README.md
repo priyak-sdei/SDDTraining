@@ -1,6 +1,11 @@
 Axios Get Request
 ![Screenshot 2023-07-19 at 9 58 03 AM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/96d80198-e5a8-4cad-b767-525581e6d890)
 
+Axios Post Request
+![Screenshot 2023-07-19 at 10 26 55 AM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/33ae2a12-b20a-48d6-bbdf-a9e5b2cce801)
+
+
+
 Using Normal methods for get ,post, put ,patch ,delete method
 
 
