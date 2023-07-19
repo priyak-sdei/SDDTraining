@@ -5,7 +5,8 @@ Axios Post Request
 ![Screenshot 2023-07-19 at 10 29 21 AM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/9476d48b-ba65-4c9c-92f5-b868d402d6d3)
 
 ![Screenshot 2023-07-19 at 10 26 55 AM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/33ae2a12-b20a-48d6-bbdf-a9e5b2cce801)
-
+by checking console.log(res.status);
+![Screenshot 2023-07-19 at 10 30 33 AM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/bb7731cf-4a8b-4c33-b0ea-5386df150859)
 
 
 Using Normal methods for get ,post, put ,patch ,delete method
