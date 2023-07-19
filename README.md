@@ -1,4 +1,5 @@
-
+Axios Get Request
+![Screenshot 2023-07-19 at 9 58 03 AM](https://github.com/priyak-sdei/SDDTraining/assets/130955657/a28c3bba-13cc-4c76-80ff-f9fa79a0074e)
 
 https://github.com/priyak-sdei/SDDTraining/assets/130955657/d91c410b-1604-45f6-bc2c-c4d72a6549d3
 
