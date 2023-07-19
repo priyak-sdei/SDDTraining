@@ -10,6 +10,7 @@ import {
   MyAxiosGetRequest,
   myAxiosGetRequest,
   myAxiosPostRequest,
+  myAxiosPutRequest,
 } from './MyAxiosRequests';
 
 const AppIse = () => {
@@ -19,15 +20,17 @@ const AppIse = () => {
   const getData = async () => {
     //for post request in axios
     await myAxiosPostRequest({
+      // await myAxiosPutRequest(100,{
       title: 'sdsds',
       desc: 'edwe',
       id: 100,
     })
-    .then(res => {
-      console.log(res);
-    }).catch(error =>{
-      console.log(error);
-    });
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
 
     // for get request
 
